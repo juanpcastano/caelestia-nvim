@@ -2,9 +2,9 @@
 
 A Neovim color scheme plugin that automatically syncs with caelestia-shell and reloads in real-time when your theme changes. Keep your editor in perfect harmony with your desktop environment.
 
-## Screenshot
+## Demo
 
-![caelestia-nvim in action](demo.mp4)
+https://github.com/user-attachments/assets/5db01d6e-9c98-4f82-8b00-3a397d6207a5
 
 ## Features
 
