@@ -1,5 +1,7 @@
 local M = {}
 
+local handle = nil
+
 local function get_scheme_path()
   local xdg_state = os.getenv("XDG_STATE_HOME") or (os.getenv("HOME") .. "/.local/state")
   return xdg_state .. "/caelestia/scheme.json"
@@ -36,13 +38,17 @@ function M.apply_colors()
   require("caelestia.colors").apply(colors)
 end
 
-function M.setup()
+function M.setup(opts)
   -- Apply colors on startup
   M.apply_colors()
 
-  -- Watch for file changes
+  -- Watch for file changes if not already watching
+  if handle then
+    return
+  end
+
   local scheme_path = get_scheme_path()
-  local handle = vim.loop.new_fs_event()
+  handle = vim.loop.new_fs_event()
 
   -- Start watching the file
   handle:start(scheme_path, {}, vim.schedule_wrap(function(err, filename, events)

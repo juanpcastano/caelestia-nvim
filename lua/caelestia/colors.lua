@@ -1,8 +1,12 @@
 local M = {}
 
 function M.apply(colors)
-	vim.cmd("highlight clear")
+	vim.cmd("hi clear")
+	if vim.fn.exists("syntax_on") then
+		vim.cmd("syntax reset")
+	end
 	vim.o.background = "dark"
+	vim.g.colors_name = "caelestia"
 
 	-- Core UI highlights using Material Design 3 tokens
 	vim.api.nvim_set_hl(0, "Normal", { fg = colors.onBackground, bg = colors.background })
