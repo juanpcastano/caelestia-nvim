@@ -28,7 +28,7 @@ function M.apply(colors)
 
 	-- UI elements
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.surfaceContainerLow })
-	vim.api.nvim_set_hl(0, "Visual", { fg = colors.onSurface, bg = colors.surfaceContainerHigh })
+	vim.api.nvim_set_hl(0, "Visual", { fg = colors.onPrimary, bg = colors.primary })
 	vim.api.nvim_set_hl(0, "VisualNOS", { fg = colors.onSurface, bg = colors.surfaceContainerHigh })
 	vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.onSurface, bg = colors.surfaceContainer })
 	vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.onPrimary, bg = colors.primary })
